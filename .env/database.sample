@@ -1,0 +1,10 @@
+# Postgres options
+POSTGRES_USERNAME=username
+POSTGRES_PASSWORD=password
+POSTGRES_HOST=host
+POSTGRES_DBNAME=dbname
+
+# This optional variable can be used to control the auth-method for host 
+# connections for all databases, all users, and all addresses.
+# Change to "trust" only in the development environment
+POSTGRES_HOST_AUTH_METHOD=postgres_host_auth_method
