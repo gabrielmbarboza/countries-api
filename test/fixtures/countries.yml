@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+valid_country:
+  name: Brasil
+  identifier: BR
+  area: 8510345,538
+  location: América do Sul
+  languages: português
+  capital: Brasília
+  latitude: -10
+  longitute: -55
+  population: 212559409
+  currency_units: Real brasileiro (BRL)
+  timezones: UTC-05:00,UTC-04:00,UTC-03:00,UTC-02:00
+  osm_code: 59470
+  history: Histórico do Brasil

@@ -16,12 +16,12 @@ COPY . ./
 RUN useradd rails --create-home --shell /bin/bash && \
 chown -R rails:rails db log storage tmp
 
-COPY entrypoint.sh /usr/bin/entrypoint.sh
+COPY entrypoint.sh /usr/bin/
 
 RUN chmod +x /usr/bin/entrypoint.sh
 
 USER rails:rails
     
-# ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 
 EXPOSE 3000
