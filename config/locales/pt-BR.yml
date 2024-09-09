@@ -1,0 +1,38 @@
+---
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        country:
+          attributes:
+            name:
+              blank: não pode ficar em branco
+              taken: deve ser único
+            identifier:
+              blank: não pode ficar em branco
+              taken: deve ser único
+              invalid: está com um formato inválido. O indentificador deve conter dois caracteres, sendo apenas letras do alfabeto
+      messages:
+        record_invalid: 'A validação falhou: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Não é possível excluir o registro pois existe um %{record} dependente
+          has_many: Não é possível excluir o registro pois existem %{record} dependentes
+    models:
+      country: 
+        one: 'País'
+        other: 'Países'
+    attributes:
+      country:
+        name: 'Nome'
+        identifier: 'Identificador'
+        area: 'Área'
+        location: 'Localização'
+        languages: 'Línguas'
+        capital: 'Capital'
+        latitude: 'Latitude'
+        longitute: 'Longitude'
+        population: 'População'
+        currency_units: 'Moedas'
+        timezones: 'Fuso horários'
+        osm_code: 'Código OpenStreetMap'
+        history: 'Histórico'
