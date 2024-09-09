@@ -32,6 +32,12 @@ gem "rack-cors"
 # Agnostic pagination in plain ruby. It does it all. Better.
 gem 'pagy', '~> 9.0', '>= 9.0.8'
 
+# Intelligent search made easy with Rails and Elasticsearch or OpenSearch
+gem 'searchkick', '~> 5.4'
+
+# Ruby integrations for Elasticsearch (client, API, etc.)
+gem 'elasticsearch', '~> 8.15'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"

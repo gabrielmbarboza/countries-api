@@ -11,8 +11,8 @@ module Api
     
       # GET /api/v1/countries
       def index
-        countries = Country.all
-        @pagy, @countries = pagy(countries)
+        countries = Country.pagy_search(search_param)
+        @pagy, @countries = pagy_searchkick(countries)
         @pagination = pagy_metadata(@pagy)
 
         render json: { data: @countries, pagination: Api::V1::PaginationSerializer.new(@pagination).json }
@@ -55,6 +55,10 @@ module Api
         params.require(:country).permit(:name, :identifier, :area, :location, :languages, :capital,
                                         :latitude, :longitute, :population, :currency_units, :timezones,
                                         :osm_code, :history)
+      end
+
+      def search_param
+        params.fetch(:q, '*')
       end
     
       def render_not_found_response

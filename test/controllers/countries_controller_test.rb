@@ -1,6 +1,14 @@
 require "test_helper"
 
 class CountriesControllerTest < ActionDispatch::IntegrationTest
+  def setup
+    Searchkick.enable_callbacks
+  end
+
+  def teardown
+    Searchkick.disable_callbacks
+  end
+
   test "should get index" do
     get api_v1_countries_url
     assert_response :success
@@ -8,14 +16,22 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get the pagination of the countries" do
     get api_v1_countries_url
-    countries = JSON.parse(@response.body)['data']
+    countries = JSON.parse(@response.body)['data']['query']
     assert_equal countries.size, 15
   end
 
   test "should get the pagination of the countries with items from page two" do
     get api_v1_countries_url, params: { page: 2 }
-    countries = JSON.parse(@response.body)['data']
+    countries = JSON.parse(@response.body)['data']['query']
     assert_equal countries.size, 3
+  end
+
+  test "should get the countries with the term Brasil" do
+    get api_v1_countries_url, params: { q: 'Brasil' }
+    countries = JSON.parse(@response.body)['data']['query']
+    assert_equal countries.size, 1
+    assert_equal countries[0]['name'], 'Brasil'
+    assert_equal countries[0]['identifier'], 'BR'
   end
 
   test "should receive an error because the page doesn't exist" do
