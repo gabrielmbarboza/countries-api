@@ -4,7 +4,7 @@ class CountryTest < ActiveSupport::TestCase
   self.use_transactional_tests = true
 
   def setup
-    @country = countries(:valid_country)
+    @country = countries(:brazil)
   end
 
   test "should create a valid country" do

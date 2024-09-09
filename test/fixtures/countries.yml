@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-valid_country:
+brazil:
   name: Brasil
   identifier: BR
-  area: 8510345,538
+  area: 8510345538
   location: América do Sul
   languages: português
   capital: Brasília
@@ -11,6 +11,262 @@ valid_country:
   longitute: -55
   population: 212559409
   currency_units: Real brasileiro (BRL)
-  timezones: UTC-05:00,UTC-04:00,UTC-03:00,UTC-02:00
+  timezones: UTC-05:00UTC-04:00UTC-03:00UTC-02:00
   osm_code: 59470
-  history: Histórico do Brasil
+  history: Maior país da América do Sul, com vasta área de litoral banhada pelo oceano Atlântico
+
+andorra:
+  name: Andorra
+  identifier: AD
+  area: 468
+  location: Europa
+  languages: catalão
+  capital: Andorra-a-Velha
+  latitude: 42.5
+  longitute: 1.5
+  population: 77265.0
+  currency_units: Euro (EUR)
+  timezones: UTC+01:00
+  osm_code: 9407
+  history: O Principado de Andorra é um dos menores Estados da Europa
+
+united_arab_emirates:
+  name: Emirados Árabes Unidos
+  identifier: AE
+  area: 83600
+  location: Ásia
+  languages: árabe
+  capital: Abu Dhabi
+  latitude: 24.0
+  longitute: 54.0
+  population: 9890400.0
+  currency_units: Dirham dos Emirados Árabes Unidos (AED)
+  timezones: UTC+04:00
+  osm_code: 307763
+  history: Os Emirados Árabes Unidos constituem um país localizado no Golfo Pérsico
+
+afghanistan:
+  name: Afeganistão
+  identifier: AF
+  area: 652230
+  location: Ásia
+  languages: persa
+  capital: Cabul
+  latitude: 33.0
+  longitute: 65.0
+  population: 40218234.0
+  currency_units: Afegane (AFN)
+  timezones: UTC+04:30
+  osm_code: 303427
+  history: A República Islâmica do Afeganistão é um país localizado no centro do continente asiático
+
+antigua_and_arbuda:
+  name: Antígua e Barbuda
+  identifier: AG
+  area: 4426
+  location: América
+  languages: inglês
+  capital: Saint John's
+  latitude: 17.05
+  longitute: -61.8
+  population: 97928.0
+  currency_units: Dólar do Caribe Oriental (XCD)
+  timezones: UTC-04:00
+  osm_code: 536900
+  history: Antígua e Barbuda é um país constituído por duas grandes ilhas
+
+albania:
+  name: Albânia
+  identifier: AL
+  area: 28748
+  location: Europa
+  languages: albanês
+  capital: Tirana
+  latitude: 41.0
+  longitute: 20.0
+  population: 2837743.0
+  currency_units: Lek (ALL)
+  timezones: UTC+01:00
+  osm_code: 53292
+  history: A República da Albânia está localizada na península balcânica no sudeste da Europa
+
+central_african_republic:
+  name: República Centro-Africana
+  identifier: CF
+  area: 622984
+  location: África
+  languages: francês
+  capital: Bangui
+  latitude: 7.0
+  longitute: 21.0
+  population: 4829764.0
+  currency_units: Franco CFA (XOF)
+  timezones: UTC+01:00
+  osm_code: 192790
+  history: A República Centro-Africana é um país sem litoral localizado no centro da África
+
+armenia:
+  name: Armênia
+  identifier: AM
+  area: 29743
+  location: Ásia
+  languages: armênio
+  capital: Ierevan
+  latitude: 40.0
+  longitute: 45.0
+  population: 2963234.0
+  currency_units: Dram armênio (AMD)
+  timezones: UTC+04:00
+  osm_code: 364066
+  history: A República da Armênia é um país localizado numa região montanhosa na Eurásia
+
+angola:
+  name: Angola
+  identifier: AO
+  area: 1246700
+  location: África
+  languages: português
+  capital: Luanda
+  latitude: -12.5
+  longitute: 18.5
+  population: 32866268.0
+  currency_units: Kuanza (AOA)
+  timezones: UTC+01:00
+  osm_code: 195267
+  history: Angola é um pais localizado na costa ocidental da África
+
+argentina:
+  id: 8
+  name: Argentina
+  identifier: AR
+  area: 2780400
+  location: América
+  languages: espanhol
+  capital: Buenos Aires
+  latitude: -34.0
+  longitute: -64.0
+  population: 45376763.0
+  currency_units: Peso argentino (ARS)
+  timezones: UTC-03:00
+  osm_code: 286393
+  history: A República Argentina está localizada na América do Sul
+
+austria:
+  name: Áustria
+  identifier: AT
+  area: 83871
+  location: Europa
+  languages: alemão
+  capital: Viena
+  latitude: 47.333333
+  longitute: 13.333333
+  population: 8917205.0
+  currency_units: Euro (EUR)
+  timezones: UTC+01:00
+  osm_code: 16239
+  history: A República da Áustria está localizada na Europa Central
+
+australia:
+  name: Austrália
+  identifier: AU
+  area: 7741220
+  location: Oceania
+  languages: inglês
+  capital: Camberra
+  latitude: -27.0
+  longitute: 133.0
+  population: 25687041.0
+  currency_units: Dólar australiano (AUD)
+  timezones: UTC+05:00UTC+06:30UTC+07:00UTC+08:00UTC+09:30UTC+10:00UTC+10:30UTC+11:30
+  osm_code: 80500
+  history: A Comunidade da Austrália é um país do hemisfério Sul
+
+Azerbaijan:
+  name: Azerbaijão
+  identifier: AZ
+  area: 86600
+  location: Ásia
+  languages: azerbaijano
+  capital: Bacu
+  latitude: 40.5
+  longitute: 47.5
+  population: 10110116.0
+  currency_units: Manat azerbaijano (AZN)
+  timezones: UTC+04:00
+  osm_code: 364110
+  history: A República do Azerbaijão é um país situado entre o Leste Europeu e o Sudoeste Asiático
+
+bosnia_and_herzegovina:
+  name: Bósnia e Herzegovina
+  identifier: BA
+  area: 51197
+  location: Europa
+  languages: bósnio
+  capital: Sarajevo
+  latitude: 44.0
+  longitute: 18.0
+  population: 3280815.0
+  currency_units: Marco convertível (BAM)
+  timezones: UTC+01:00
+  osm_code: 2528142
+  history: A Bósnia e Herzegovina ou apenas Bósnia é uma república federal dos Bálcãs
+
+barbados:
+  name: Barbados
+  identifier: BB
+  area: 430
+  location: América
+  languages: inglês
+  capital: Bridgetown
+  latitude: 13.166667
+  longitute: -59.533333
+  population: 287371.0
+  currency_units: Dólar de Barbados (BBD)
+  timezones: UTC-04:00
+  osm_code: 547511
+  history: Barbados é um país insular localizado na América Central. 
+
+bangladesh:
+  name: Bangladesh
+  identifier: BD
+  area: 148460
+  location: Ásia
+  languages: bengali
+  capital: Daca
+  latitude: 24.0
+  longitute: 90.0
+  population: 164689383.0
+  currency_units: Taka (BDT)
+  timezones: UTC+06:00
+  osm_code: 184640
+  history: A República Popular do Bangladesh está localizada na Ásia
+
+belgium:
+  name: Bélgica
+  identifier: BE
+  area: 30528
+  location: Europa
+  languages: alemão
+  capital: Bruxelas
+  latitude: 50.833333
+  longitute: 4.0
+  population: 11555997.0
+  currency_units: Euro (EUR)
+  timezones: UTC+01:00
+  osm_code: 52411
+  history: O Reino da Bélgica está localizado na Europa
+
+burkina_faso:
+  name: Burkina Faso
+  identifier: BF
+  area: 274200
+  location: África
+  languages: francês
+  capital: Uagadugu
+  latitude: 13.0
+  longitute: -2.0
+  population: 20903278.0
+  currency_units: Franco CFA (XOF)
+  timezones: UTC
+  osm_code: 192783
+  history: Burkina Faso Burquina Fasso (ou Faso) ou simplesmente Burquina
