@@ -30,7 +30,7 @@ gem "bootsnap", require: false
 gem "rack-cors"
 
 # Agnostic pagination in plain ruby. It does it all. Better.
-gem 'pagy', '~> 9.0', '>= 9.0.8'
+gem 'pagy', '~> 9.0'
 
 # Intelligent search made easy with Rails and Elasticsearch or OpenSearch
 gem 'searchkick', '~> 5.4'
