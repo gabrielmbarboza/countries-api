@@ -1,21 +1,15 @@
 module Api
   module V1
     class CountriesController < ApplicationController
-      include Pagy::Backend
-
       before_action :set_country, only: %i[show update destroy]
 
       rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
-      rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-      rescue_from Pagy::VariableError, with: :render_pagy_variable_error_response
-    
+      rescue_from ActiveRecord::RecordInvalid, with: :render_record_invalid
+
       # GET /api/v1/countries
       def index
-        countries = Country.pagy_search(search_param)
-        @pagy, @countries = pagy_searchkick(countries)
-        @pagination = pagy_metadata(@pagy)
-
-        render json: { data: @countries, pagination: Api::V1::PaginationSerializer.new(@pagination).json }
+        @countries = Country.all
+        render json: { data: CountrySerializer.new(@countries).json }
       end
     
       # GET /api/v1/countries/1
@@ -53,7 +47,7 @@ module Api
     
       def country_params
         params.require(:country).permit(:name, :identifier, :area, :location, :languages, :capital,
-                                        :latitude, :longitute, :population, :currency_units, :timezones,
+                                        :latitude, :longitude, :population, :currency_units, :timezones,
                                         :osm_code, :history)
       end
 
@@ -64,13 +58,9 @@ module Api
       def render_not_found_response
         render json: { error: "País não encontrado" }, status: :not_found
       end
-    
-      def render_unprocessable_entity_response(invalid)
-        render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
-      end
 
-      def render_pagy_variable_error_response
-        render json: { error: "O valor de page deve ser maior ou igual a 1" }, status: :bad_request 
+      def render_record_invalid(invalid)
+        render json: { errors: invalid.record.errors.full_messages }, status: 422
       end
     end
   end

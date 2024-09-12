@@ -8,7 +8,7 @@ class CreateCountries < ActiveRecord::Migration[7.2]
       t.string :languages
       t.string :capital
       t.decimal :latitude, precision: 10, scale: 6
-      t.decimal :longitute, precision: 10, scale: 6
+      t.decimal :longitude, precision: 10, scale: 6
       t.decimal :population, precision: 15, scale: 2
       t.string :currency_units
       t.string :timezones

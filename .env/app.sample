@@ -2,5 +2,4 @@
 # Replace with "linux/amd64" only in the arm64 platform.
 DOCKER_DEFAULT_PLATFORM=sample/platform
 
-# Replace elasticsearch_url with elasticsearch if you want to use ElasticSearch as a docker-compose service.
-ELASTICSEARCH_URL=elasticsearch_url
+JWT_SECRET=jwt_secret

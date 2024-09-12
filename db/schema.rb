@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_07_211511) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_10_010404) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_07_211511) do
     t.string "languages"
     t.string "capital"
     t.decimal "latitude", precision: 10, scale: 6
-    t.decimal "longitute", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
     t.decimal "population", precision: 15, scale: 2
     t.string "currency_units"
     t.string "timezones"
@@ -32,5 +32,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_07_211511) do
     t.datetime "updated_at", null: false
     t.index ["identifier"], name: "unique_identifier", unique: true
     t.index ["name"], name: "unique_name", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 end

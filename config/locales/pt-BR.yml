@@ -1,6 +1,9 @@
 ---
 pt-BR:
   activerecord:
+    exceptions:
+      not_found:
+        message: '%{model_name} não encontrado'
     errors:
       models:
         country:
@@ -30,7 +33,7 @@ pt-BR:
         languages: 'Línguas'
         capital: 'Capital'
         latitude: 'Latitude'
-        longitute: 'Longitude'
+        longitude: 'Longitude'
         population: 'População'
         currency_units: 'Moedas'
         timezones: 'Fuso horários'

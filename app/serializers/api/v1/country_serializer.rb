@@ -1,6 +1,6 @@
 module Api
   module V1 
-    class PaginationSerializer < ApplicationSerializer
+    class CountrySerializer < ApplicationSerializer
       def json
         super(json_fields)
       end
@@ -9,7 +9,7 @@ module Api
 
       def json_fields
         {
-          only: %i[prev_url next_url count page next]
+          except: %i[id created_at updated_at]
         }
       end
     end

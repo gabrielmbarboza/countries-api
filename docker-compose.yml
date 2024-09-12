@@ -10,18 +10,7 @@ services:
       - my_network
     ports:
       - 5432:5432
-
-  elasticsearch:
-    image: elasticsearch:8.11.2
-    ports:
-      - 9200:9200
-      - 9300:9300
-    environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=false
-    networks:
-      - my_network
-
+  
   countries_api:
     container_name: countries_api
     build:
@@ -44,7 +33,6 @@ services:
       - my_network
     depends_on:
       - db
-      - elasticsearch
 
 volumes:
   gem_cache:

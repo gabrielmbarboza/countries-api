@@ -9,8 +9,5 @@ module ActiveSupport
 
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
     fixtures :all
-
-    # reindex models
-    Country.reindex
   end
 end

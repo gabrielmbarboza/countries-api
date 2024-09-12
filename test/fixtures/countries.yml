@@ -8,7 +8,7 @@ brazil:
   languages: português
   capital: Brasília
   latitude: -10
-  longitute: -55
+  longitude: -55
   population: 212559409
   currency_units: Real brasileiro (BRL)
   timezones: UTC-05:00UTC-04:00UTC-03:00UTC-02:00
@@ -23,7 +23,7 @@ andorra:
   languages: catalão
   capital: Andorra-a-Velha
   latitude: 42.5
-  longitute: 1.5
+  longitude: 1.5
   population: 77265.0
   currency_units: Euro (EUR)
   timezones: UTC+01:00
@@ -38,7 +38,7 @@ united_arab_emirates:
   languages: árabe
   capital: Abu Dhabi
   latitude: 24.0
-  longitute: 54.0
+  longitude: 54.0
   population: 9890400.0
   currency_units: Dirham dos Emirados Árabes Unidos (AED)
   timezones: UTC+04:00
@@ -53,7 +53,7 @@ afghanistan:
   languages: persa
   capital: Cabul
   latitude: 33.0
-  longitute: 65.0
+  longitude: 65.0
   population: 40218234.0
   currency_units: Afegane (AFN)
   timezones: UTC+04:30
@@ -68,7 +68,7 @@ antigua_and_arbuda:
   languages: inglês
   capital: Saint John's
   latitude: 17.05
-  longitute: -61.8
+  longitude: -61.8
   population: 97928.0
   currency_units: Dólar do Caribe Oriental (XCD)
   timezones: UTC-04:00
@@ -83,7 +83,7 @@ albania:
   languages: albanês
   capital: Tirana
   latitude: 41.0
-  longitute: 20.0
+  longitude: 20.0
   population: 2837743.0
   currency_units: Lek (ALL)
   timezones: UTC+01:00
@@ -98,7 +98,7 @@ central_african_republic:
   languages: francês
   capital: Bangui
   latitude: 7.0
-  longitute: 21.0
+  longitude: 21.0
   population: 4829764.0
   currency_units: Franco CFA (XOF)
   timezones: UTC+01:00
@@ -113,7 +113,7 @@ armenia:
   languages: armênio
   capital: Ierevan
   latitude: 40.0
-  longitute: 45.0
+  longitude: 45.0
   population: 2963234.0
   currency_units: Dram armênio (AMD)
   timezones: UTC+04:00
@@ -128,7 +128,7 @@ angola:
   languages: português
   capital: Luanda
   latitude: -12.5
-  longitute: 18.5
+  longitude: 18.5
   population: 32866268.0
   currency_units: Kuanza (AOA)
   timezones: UTC+01:00
@@ -144,7 +144,7 @@ argentina:
   languages: espanhol
   capital: Buenos Aires
   latitude: -34.0
-  longitute: -64.0
+  longitude: -64.0
   population: 45376763.0
   currency_units: Peso argentino (ARS)
   timezones: UTC-03:00
@@ -159,7 +159,7 @@ austria:
   languages: alemão
   capital: Viena
   latitude: 47.333333
-  longitute: 13.333333
+  longitude: 13.333333
   population: 8917205.0
   currency_units: Euro (EUR)
   timezones: UTC+01:00
@@ -174,7 +174,7 @@ australia:
   languages: inglês
   capital: Camberra
   latitude: -27.0
-  longitute: 133.0
+  longitude: 133.0
   population: 25687041.0
   currency_units: Dólar australiano (AUD)
   timezones: UTC+05:00UTC+06:30UTC+07:00UTC+08:00UTC+09:30UTC+10:00UTC+10:30UTC+11:30
@@ -189,7 +189,7 @@ Azerbaijan:
   languages: azerbaijano
   capital: Bacu
   latitude: 40.5
-  longitute: 47.5
+  longitude: 47.5
   population: 10110116.0
   currency_units: Manat azerbaijano (AZN)
   timezones: UTC+04:00
@@ -204,7 +204,7 @@ bosnia_and_herzegovina:
   languages: bósnio
   capital: Sarajevo
   latitude: 44.0
-  longitute: 18.0
+  longitude: 18.0
   population: 3280815.0
   currency_units: Marco convertível (BAM)
   timezones: UTC+01:00
@@ -219,7 +219,7 @@ barbados:
   languages: inglês
   capital: Bridgetown
   latitude: 13.166667
-  longitute: -59.533333
+  longitude: -59.533333
   population: 287371.0
   currency_units: Dólar de Barbados (BBD)
   timezones: UTC-04:00
@@ -234,7 +234,7 @@ bangladesh:
   languages: bengali
   capital: Daca
   latitude: 24.0
-  longitute: 90.0
+  longitude: 90.0
   population: 164689383.0
   currency_units: Taka (BDT)
   timezones: UTC+06:00
@@ -249,7 +249,7 @@ belgium:
   languages: alemão
   capital: Bruxelas
   latitude: 50.833333
-  longitute: 4.0
+  longitude: 4.0
   population: 11555997.0
   currency_units: Euro (EUR)
   timezones: UTC+01:00
@@ -264,7 +264,7 @@ burkina_faso:
   languages: francês
   capital: Uagadugu
   latitude: 13.0
-  longitute: -2.0
+  longitude: -2.0
   population: 20903278.0
   currency_units: Franco CFA (XOF)
   timezones: UTC

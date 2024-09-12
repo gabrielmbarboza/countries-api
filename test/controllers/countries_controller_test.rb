@@ -1,50 +1,29 @@
 require "test_helper"
+require_relative '../helpers/authorization_helper'
 
 class CountriesControllerTest < ActionDispatch::IntegrationTest
-  def setup
-    Searchkick.enable_callbacks
-  end
+  include AuthorizationHelper
 
-  def teardown
-    Searchkick.disable_callbacks
+  def setup
+    test_user = { email: 'user@example.com', password: '123456' }
+    @auth_token = auth_tokens_for_user(test_user)
   end
 
   test "should get index" do
-    get api_v1_countries_url
+    get api_v1_countries_url, headers: { 'Authorization' => @auth_token}
     assert_response :success
   end
 
-  test "should get the pagination of the countries" do
-    get api_v1_countries_url
-    countries = JSON.parse(@response.body)['data']['query']
-    assert_equal countries.size, 15
-  end
-
-  test "should get the pagination of the countries with items from page two" do
-    get api_v1_countries_url, params: { page: 2 }
-    countries = JSON.parse(@response.body)['data']['query']
-    assert_equal countries.size, 3
-  end
-
-  test "should get the countries with the term Brasil" do
-    get api_v1_countries_url, params: { q: 'Brasil' }
-    countries = JSON.parse(@response.body)['data']['query']
-    assert_equal countries.size, 1
-    assert_equal countries[0]['name'], 'Brasil'
-    assert_equal countries[0]['identifier'], 'BR'
-  end
-
-  test "should receive an error because the page doesn't exist" do
-    get api_v1_countries_url, params: { page: -1 }
-    pagy_error = JSON.parse(@response.body)
-    assert_equal pagy_error['error'], "O valor de page deve ser maior ou igual a 1"
-    assert_equal @response.status, 400
+  test "should get all of the countries" do
+    get api_v1_countries_url, headers: { 'Authorization' => @auth_token}
+    countries = JSON.parse(@response.body)['data']
+    assert_equal countries.size, 18
   end
 
   test "should show a country" do
     country = countries(:brazil)
 
-    get api_v1_country_url(country)
+    get api_v1_country_url(country), headers: { 'Authorization' => @auth_token}
     assert_response :success
 
     brazil = JSON.parse(@response.body)
@@ -54,7 +33,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not show a country because it has not been found" do
-    get api_v1_country_url(999999)
+    get api_v1_country_url(999999), headers: { 'Authorization' => @auth_token}
 
     country_not_found = JSON.parse(@response.body)['error']
 
@@ -64,7 +43,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create a country" do
     assert_difference("Country.count") do
-      post api_v1_countries_url, params: {
+      post api_v1_countries_url, headers: { 'Authorization' => @auth_token}, params: {
         country: {
           name: "Georgia do Sul",
           identifier: "GS",
@@ -73,7 +52,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
           languages: "inglês",
           capital: "Ponto do Rei Eduardo",
           latitude: -54.5,
-          longitute: -37,
+          longitude: -37,
           population: 30,
           currency_units: "Saint Helena pound (£)",
           timezones: "UTC-02:00",
@@ -85,7 +64,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should return an error because the country name is nil" do
-    post api_v1_countries_url, params: {
+    post api_v1_countries_url, headers: { 'Authorization' => @auth_token}, params: {
       country: {
         name: nil,
         identifier: "WN",
@@ -98,7 +77,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should return an error because the country name already exists" do
-    post api_v1_countries_url, params: {
+    post api_v1_countries_url, headers: { 'Authorization' => @auth_token}, params: {
       country: {
         name: "Brasil",
         identifier: "WN",
@@ -111,7 +90,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should return an error because the identifier name is nil" do
-    post api_v1_countries_url, params: {
+    post api_v1_countries_url, headers: { 'Authorization' => @auth_token}, params: {
       country: {
         name: 'Wano',
         identifier: nil,
@@ -124,7 +103,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should return an error because the country identifier is in an invalid format" do
-    post api_v1_countries_url, params: {
+    post api_v1_countries_url, headers: { 'Authorization' => @auth_token}, params: {
       country: {
         name: 'Wano',
         identifier: "WN1",
@@ -137,7 +116,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should return an error because the country identifier already exists" do
-    post api_v1_countries_url, params: {
+    post api_v1_countries_url, headers: { 'Authorization' => @auth_token}, params: {
       country: {
         name: "Wano",
         identifier: "BR",
@@ -152,7 +131,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   test "should update the country" do
     country = countries(:argentina)
 
-    patch api_v1_country_url(country), params: {
+    patch api_v1_country_url(country), headers: { 'Authorization' => @auth_token}, params: {
       country: {
         name: 'Wano',
         identifier: "WN",
@@ -168,7 +147,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   test "should not update the country because the country name is blank" do
     country = countries(:argentina)
 
-    patch api_v1_country_url(country), params: {
+    patch api_v1_country_url(country), headers: { 'Authorization' => @auth_token}, params: {
       country: {
         name: "",
       }
@@ -182,7 +161,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   test "should not update the country because the country name already exists" do
     country = countries(:argentina)
 
-    patch api_v1_country_url(country), params: {
+    patch api_v1_country_url(country), headers: { 'Authorization' => @auth_token}, params: {
       country: {
         name: "Brasil"
       }
@@ -196,7 +175,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   test "should not update the country because the country identifier is blank" do
     country = countries(:argentina)
 
-    patch api_v1_country_url(country), params: {
+    patch api_v1_country_url(country), headers: { 'Authorization' => @auth_token}, params: {
       country: {
         identifier: "",
       }
@@ -210,7 +189,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   test "should not update the country because the country identifier already exists" do
     country = countries(:argentina)
 
-    patch api_v1_country_url(country), params: {
+    patch api_v1_country_url(country), headers: { 'Authorization' => @auth_token}, params: {
       country: {
         identifier: "BR"
       }
@@ -224,7 +203,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   test "should not update the country because the country identifier is in an invalid format" do
     country = countries(:argentina)
 
-    patch api_v1_country_url(country), params: {
+    patch api_v1_country_url(country), headers: { 'Authorization' => @auth_token}, params: {
       country: {
         identifier: "WN1",
       }
@@ -236,7 +215,7 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not update a country because it has not been found" do
-    patch api_v1_country_url(999999), params: {
+    patch api_v1_country_url(999999), headers: { 'Authorization' => @auth_token}, params: {
       country: {
         identifier: "WN",
       }
@@ -251,13 +230,13 @@ class CountriesControllerTest < ActionDispatch::IntegrationTest
   test "should delete a country" do
     country = countries(:argentina)
     
-    delete api_v1_country_url(country)
+    delete api_v1_country_url(country), headers: { 'Authorization' => @auth_token}
 
     assert_equal Country.count, 17
   end
 
   test "should not delete a country because it has not been found" do
-    delete api_v1_country_url(999999)
+    delete api_v1_country_url(999999), headers: { 'Authorization' => @auth_token}
 
     country_not_found = JSON.parse(@response.body)['error']
 

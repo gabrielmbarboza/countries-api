@@ -20,7 +20,7 @@ module Extract
             {
               identifier: country["cca2"],
               latitude: country["latlng"].first,
-              longitute: country["latlng"].last,
+              longitude: country["latlng"].last,
               osm_code: country["maps"]["openStreetMaps"].split('/').last,
               population: country["population"],
               timezones: country["timezones"].join(",")
