@@ -30,7 +30,7 @@ gem "bootsnap", require: false
 gem "rack-cors"
 
 # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard.
-gem 'jwt', '~> 2.8', '>= 2.8.2'
+gem 'jwt', '~> 2.9'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
