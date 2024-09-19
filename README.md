@@ -76,8 +76,6 @@ Use the `countries:load` task to populate the development database with valid ci
 docker compose run --rm countries_api bin/rails countries:load
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
-
 ## Usage <a name = "usage"></a>
 
 Using Docker and docker-compose, just run the following command.
